@@ -1,0 +1,25 @@
+@media (min-width: 576px) {
+	.section-padding {
+		padding: 6em 2.5em;
+	}
+
+	// HEADER
+	.header {
+		&__text {
+			max-width: 400px;
+			&-item {
+				font-size: 5rem;
+			}
+		}
+	}
+
+	.about {
+		&__heading {
+			font-size: 3.2rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+}

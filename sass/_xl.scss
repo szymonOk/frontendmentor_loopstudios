@@ -1,0 +1,12 @@
+@media (min-width: 1200px) {
+	// ABOUT
+	.about {
+		&__heading {
+			font-size: 3.8rem;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+}

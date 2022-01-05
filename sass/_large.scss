@@ -1,0 +1,75 @@
+@media (min-width: 992px) {
+	// NAVIGATION
+	.nav {
+		&__bar {
+			margin: 0 8em;
+		}
+
+		&__logo {
+			&-item {
+				font-size: 3.6rem;
+			}
+		}
+
+		&__list-desktop {
+			margin-top: 14px;
+			li {
+				a {
+					font-size: 2.4rem;
+				}
+			}
+		}
+	}
+
+	// HEADER
+	.header {
+		&__img {
+			align-items: flex-end;
+			background-image: url('../images/desktop/image-hero.jpg');
+			padding-bottom: 9em;
+
+			&::before {
+				background-color: rgba(0, 0, 0, 0.4);
+			}
+		}
+
+		&__text {
+			max-width: 500px;
+			margin: 0 9em;
+
+			&-item {
+				font-size: 6rem;
+			}
+		}
+	}
+
+	// ABOUT
+	.about {
+		&__img {
+			&-item {
+				&--mobile {
+					display: none;
+				}
+
+				&--desktop {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&__info {
+			padding: 4em 0 0 4em;
+		}
+
+		&__heading {
+			font-size: 3.2rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+}
