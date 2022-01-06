@@ -14,12 +14,23 @@
 	}
 
 	.about {
+		padding-bottom: 0;
 		&__heading {
 			font-size: 3.2rem;
 		}
 
 		&__text {
 			font-size: 1.8rem;
+		}
+	}
+
+	.creations {
+		&__card {
+			height: 170px;
+		}
+
+		&__heading {
+			font-size: 3.2rem;
 		}
 	}
 }

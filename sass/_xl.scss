@@ -1,4 +1,19 @@
 @media (min-width: 1200px) {
+	.nav {
+		&__bar {
+			margin: 0 8em;
+		}
+	}
+
+	.header {
+		&__img {
+			padding-bottom: 9em;
+		}
+
+		&__text {
+			margin: 0 9em;
+		}
+	}
 	// ABOUT
 	.about {
 		&__heading {
@@ -7,6 +22,16 @@
 
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+
+	.creations {
+		&__card {
+			height: 500px;
+		}
+
+		&__heading {
+			font-size: 3.8rem;
 		}
 	}
 }

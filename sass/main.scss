@@ -20,6 +20,13 @@ body {
 	padding: 6em 1.5em;
 }
 
+.separator {
+	width: 100%;
+	padding: 0.2em 0;
+	grid-row: 2/3;
+	grid-column: 1/-1;
+}
+
 // NAVIGATION
 .nav {
 	position: fixed;
@@ -152,6 +159,7 @@ body {
 
 // ABOUT
 .about {
+	padding-bottom: 0;
 	&__container {
 		text-align: center;
 	}
@@ -173,7 +181,7 @@ body {
 	}
 
 	&__info {
-		padding: 4em 1.6em 0;
+		padding: 4em 1.2em 0;
 	}
 
 	&__heading {
@@ -184,8 +192,121 @@ body {
 	}
 
 	&__text {
-		font-size: 1.7rem;
-		line-height: 140%;
+		font-family: 'Alata', sans-serif;
+		color: $very-dark-gray;
+		font-size: 1.6rem;
+		line-height: 170%;
+	}
+}
+
+// CREATIONS
+.creations {
+	&__cards {
+		display: grid;
+		gap: 1.5em;
+	}
+
+	&__heading {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 2.8rem;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		background-position: center;
+		background-size: cover;
+		height: 120px;
+		padding: 1em;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0));
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.486);
+			clip-path: circle(0 at 10% 90%);
+			transition: clip-path 0.7s;
+		}
+
+		&:hover::after {
+			clip-path: circle(150% at 10% 90%);
+		}
+
+		&:hover &-title {
+			color: $black;
+		}
+
+		&-title {
+			width: 130px;
+			color: $white;
+			font-size: 2.4rem;
+			font-weight: 200;
+			text-transform: uppercase;
+			z-index: 10;
+			transition: color 0.2s;
+		}
+
+		&:nth-child(3) {
+			background-image: url('../images/mobile/image-deep-earth.jpg');
+		}
+		&:nth-child(4) {
+			background-image: url('../images/mobile/image-night-arcade.jpg');
+		}
+		&:nth-child(5) {
+			background-image: url('../images/mobile/image-soccer-team.jpg');
+		}
+		&:nth-child(6) {
+			background-image: url('../images/mobile/image-grid.jpg');
+		}
+		&:nth-child(7) {
+			background-image: url('../images/mobile/image-from-above.jpg');
+		}
+		&:nth-child(8) {
+			background-image: url('../images/mobile/image-pocket-borealis.jpg');
+		}
+		&:nth-child(9) {
+			background-image: url('../images/mobile/image-curiosity.jpg');
+		}
+		&:nth-child(10) {
+			background-image: url('../images/mobile/image-fisheye.jpg');
+		}
+	}
+
+	&__btn {
+		margin-top: 2em;
+		justify-self: center;
+
+		&-item {
+			padding: 0.8em 2em;
+			background: none;
+			border: 2px solid $very-dark-gray;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			cursor: pointer;
+			transition: background 0.3s, border 0.3s, color 0.3s;
+
+			&:hover {
+				background-color: $black;
+				border: 2px solid transparent;
+				color: $white;
+			}
+		}
 	}
 }
 

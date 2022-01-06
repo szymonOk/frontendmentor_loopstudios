@@ -73,4 +73,25 @@
 			font-size: 1.5rem;
 		}
 	}
+
+	.creations {
+		&__cards {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&__heading {
+			grid-row: 1/2;
+			grid-column: 1/2;
+			margin: 0;
+			text-align: left;
+			padding-top: 6px;
+		}
+
+		&__btn {
+			grid-row: 1/2;
+			grid-column: 2/3;
+			margin: 0;
+			justify-self: flex-end;
+		}
+	}
 }

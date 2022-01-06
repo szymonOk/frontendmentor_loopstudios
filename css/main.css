@@ -28,6 +28,15 @@ body {
   padding: 6em 1.5em;
 }
 
+.separator {
+  width: 100%;
+  padding: 0.2em 0;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  grid-column: 1/-1;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -186,6 +195,10 @@ body {
   padding: 0.5em;
 }
 
+.about {
+  padding-bottom: 0;
+}
+
 .about__container {
   text-align: center;
 }
@@ -206,7 +219,7 @@ body {
 }
 
 .about__info {
-  padding: 4em 1.6em 0;
+  padding: 4em 1.2em 0;
 }
 
 .about__heading {
@@ -217,8 +230,141 @@ body {
 }
 
 .about__text {
-  font-size: 1.7rem;
-  line-height: 140%;
+  font-family: 'Alata', sans-serif;
+  color: dimgray;
+  font-size: 1.6rem;
+  line-height: 170%;
+}
+
+.creations__cards {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5em;
+}
+
+.creations__heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.creations__card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-position: center;
+  background-size: cover;
+  height: 120px;
+  padding: 1em;
+}
+
+.creations__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0));
+}
+
+.creations__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.486);
+  -webkit-clip-path: circle(0 at 10% 90%);
+          clip-path: circle(0 at 10% 90%);
+  -webkit-transition: -webkit-clip-path 0.7s;
+  transition: -webkit-clip-path 0.7s;
+  transition: clip-path 0.7s;
+  transition: clip-path 0.7s, -webkit-clip-path 0.7s;
+}
+
+.creations__card:hover::after {
+  -webkit-clip-path: circle(150% at 10% 90%);
+          clip-path: circle(150% at 10% 90%);
+}
+
+.creations__card:hover .creations__card-title {
+  color: black;
+}
+
+.creations__card-title {
+  width: 130px;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  z-index: 10;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.creations__card:nth-child(3) {
+  background-image: url("../images/mobile/image-deep-earth.jpg");
+}
+
+.creations__card:nth-child(4) {
+  background-image: url("../images/mobile/image-night-arcade.jpg");
+}
+
+.creations__card:nth-child(5) {
+  background-image: url("../images/mobile/image-soccer-team.jpg");
+}
+
+.creations__card:nth-child(6) {
+  background-image: url("../images/mobile/image-grid.jpg");
+}
+
+.creations__card:nth-child(7) {
+  background-image: url("../images/mobile/image-from-above.jpg");
+}
+
+.creations__card:nth-child(8) {
+  background-image: url("../images/mobile/image-pocket-borealis.jpg");
+}
+
+.creations__card:nth-child(9) {
+  background-image: url("../images/mobile/image-curiosity.jpg");
+}
+
+.creations__card:nth-child(10) {
+  background-image: url("../images/mobile/image-fisheye.jpg");
+}
+
+.creations__btn {
+  margin-top: 2em;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.creations__btn-item {
+  padding: 0.8em 2em;
+  background: none;
+  border: 2px solid dimgray;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s, border 0.3s, color 0.3s;
+  transition: background 0.3s, border 0.3s, color 0.3s;
+}
+
+.creations__btn-item:hover {
+  background-color: black;
+  border: 2px solid transparent;
+  color: white;
 }
 
 @media (min-width: 375px) {
@@ -237,11 +383,20 @@ body {
   .header__text-item {
     font-size: 5rem;
   }
+  .about {
+    padding-bottom: 0;
+  }
   .about__heading {
     font-size: 3.2rem;
   }
   .about__text {
     font-size: 1.8rem;
+  }
+  .creations__card {
+    height: 170px;
+  }
+  .creations__heading {
+    font-size: 3.2rem;
   }
 }
 
@@ -327,11 +482,36 @@ body {
   .about__text {
     font-size: 1.5rem;
   }
+  .creations__cards {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .creations__heading {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    margin: 0;
+    text-align: left;
+    padding-top: 6px;
+  }
+  .creations__btn {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    margin: 0;
+    justify-self: flex-end;
+  }
 }
 
 @media (min-width: 992px) {
   .nav__bar {
-    margin: 0 8em;
+    margin: 0 2em;
   }
   .nav__logo-item {
     font-size: 3.6rem;
@@ -347,14 +527,14 @@ body {
         -ms-flex-align: end;
             align-items: flex-end;
     background-image: url("../images/desktop/image-hero.jpg");
-    padding-bottom: 9em;
+    padding-bottom: 3em;
   }
   .header__img::before {
     background-color: rgba(0, 0, 0, 0.4);
   }
   .header__text {
     max-width: 500px;
-    margin: 0 9em;
+    margin: 0 3em;
   }
   .header__text-item {
     font-size: 6rem;
@@ -378,14 +558,85 @@ body {
   .about__text {
     font-size: 1.8rem;
   }
+  .creations__cards {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .creations__card {
+    height: 400px;
+  }
+  .creations__card-title {
+    font-size: 3rem;
+    width: 160px;
+  }
+  .creations__card::before {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0));
+  }
+  .creations__card:nth-child(3) {
+    background-image: url("../images/desktop/image-deep-earth.jpg");
+  }
+  .creations__card:nth-child(4) {
+    background-image: url("../images/desktop/image-night-arcade.jpg");
+  }
+  .creations__card:nth-child(5) {
+    background-image: url("../images/desktop/image-soccer-team.jpg");
+  }
+  .creations__card:nth-child(6) {
+    background-image: url("../images/desktop/image-grid.jpg");
+  }
+  .creations__card:nth-child(7) {
+    background-image: url("../images/desktop/image-from-above.jpg");
+  }
+  .creations__card:nth-child(8) {
+    background-image: url("../images/desktop/image-pocket-borealis.jpg");
+  }
+  .creations__card:nth-child(9) {
+    background-image: url("../images/desktop/image-curiosity.jpg");
+  }
+  .creations__card:nth-child(10) {
+    background-image: url("../images/desktop/image-fisheye.jpg");
+  }
+  .creations__heading {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+  }
+  .creations__btn {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    grid-column: 4/-1;
+  }
+  .creations__btn-item {
+    font-size: 1.7rem;
+  }
 }
 
 @media (min-width: 1200px) {
+  .nav__bar {
+    margin: 0 8em;
+  }
+  .header__img {
+    padding-bottom: 9em;
+  }
+  .header__text {
+    margin: 0 9em;
+  }
   .about__heading {
     font-size: 3.8rem;
   }
   .about__text {
     font-size: 2.2rem;
+  }
+  .creations__card {
+    height: 500px;
+  }
+  .creations__heading {
+    font-size: 3.8rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
