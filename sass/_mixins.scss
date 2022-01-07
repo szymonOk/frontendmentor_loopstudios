@@ -8,3 +8,20 @@
 	height: 2px;
 	transition: width 0.2s;
 }
+
+@mixin logoItem {
+	position: relative;
+	font-family: 'Alata', sans-serif;
+	font-size: 3rem;
+	color: $white;
+	text-decoration: none;
+}
+
+@mixin navItem {
+	position: relative;
+	padding: 0.5em 1em;
+	font-size: 1.6rem;
+	color: $white;
+	text-decoration: none;
+	text-transform: capitalize;
+}

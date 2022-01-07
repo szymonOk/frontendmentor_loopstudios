@@ -22,12 +22,8 @@
 			li {
 				list-style-type: none;
 				a {
-					position: relative;
-					padding: 0.5em 1em;
+					@include navItem;
 					font-size: 2rem;
-					color: $white;
-					text-decoration: none;
-					text-transform: capitalize;
 
 					&::before {
 						@include beforeHover;
@@ -74,6 +70,7 @@
 		}
 	}
 
+	// CREATIONS
 	.creations {
 		&__cards {
 			grid-template-columns: 1fr 1fr;

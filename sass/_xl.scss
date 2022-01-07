@@ -1,10 +1,12 @@
 @media (min-width: 1200px) {
+	// NAV
 	.nav {
 		&__bar {
 			margin: 0 8em;
 		}
 	}
 
+	// HEADER
 	.header {
 		&__img {
 			padding-bottom: 9em;
@@ -14,6 +16,7 @@
 			margin: 0 9em;
 		}
 	}
+
 	// ABOUT
 	.about {
 		&__heading {
@@ -25,6 +28,7 @@
 		}
 	}
 
+	// CREATIONS
 	.creations {
 		&__card {
 			height: 500px;

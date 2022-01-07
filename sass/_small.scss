@@ -13,6 +13,7 @@
 		}
 	}
 
+	// ABOUT
 	.about {
 		padding-bottom: 0;
 		&__heading {
@@ -24,6 +25,7 @@
 		}
 	}
 
+	// CREATIONS
 	.creations {
 		&__card {
 			height: 170px;
@@ -31,6 +33,27 @@
 
 		&__heading {
 			font-size: 3.2rem;
+		}
+	}
+
+	.footer {
+		padding: 4em;
+		&__nav {
+			li {
+				a {
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		&__links {
+			a {
+				font-size: 2.4rem;
+			}
+		}
+
+		&__text {
+			font-size: 1.6rem;
 		}
 	}
 }
